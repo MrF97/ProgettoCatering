@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head
+	th:replace="fragments/base.html :: headerfiles(title='Registra Utente')">
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+
+		<h4>Modifica Buffet</h4>
+
+		<form th:action="@{/admin/modificaBuffet/{id}(id = ${buffet.id})}" method="POST">
+			<table>
+					
+				<tr>
+					<div>Chef disponibili</div>
+					<dl th:each="chef : ${chefs}">
+						<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="${chef.id}" name="${chef.id}"
+									class="custom-control-input" value="${chef.id}"
+									th:field="${cuoco_id}"
+									th:text="${chef.name + chef.cognome}"> <label
+									class="custom-control-label" for="option1"></label>
+						</div>
+				
+					</dl>
+				</tr>
+
+
+				<tr>
+					<td>
+						<button type="submit">Registra</button>
+					</td>
+				</tr>
+			</table>
+			
+				
+			
+		</form>
+
+
+
+	</div>
+	
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/moment/moment.min.js}"></script>
+	<script th:src="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.js}"></script>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<p th:insert="fragments/base.html :: headerfiles(title='Home')"></p>
+
+<link rel="stylesheet" th:href="@{/css/home.css}">
+
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	
+	<div id="flex-container">
+
+		<div id="lista">
+			<a th:text="#{header.menuUtente}">Menu</a>
+			<a id="elenco" th:href="@{/admin/buffets}">Modifica i Buffets</a> 
+			<a id="elenco" th:href="@{/admin/chefs}">Modifica gli Chefs</a>
+			<a id="elenco" th:href="@{/logout}">Logout</a>
+		</div>
+		
+		<div id="immagine">
+			<img
+				src="../images/catering.jpg"
+				class="d-block w-100" alt="...">
+		</div>
+	</div>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+#flex-container {
+	display: flex;
+	background-color: #EED8AE;
+	justify-content: space-between;
+	width: 100%;
+	font: italic 1.2em "Fira Sans", serif;
+	text-align: center;
+	border: 5px solid black;
+}
+
+
+#incipit{
+	text-align: center;
+	padding: 30px 330px 30px 330px;
+	font-size: 25px;
+	border-top: 5px solid black;
+	font: Georigia;
+}
+
+
+#lista{
+	text-align: center;
+	padding: 1px 40px 1px 4px;
+	font-size: 21px;
+	
+}
+
+
+#titolo{
+	font-size: 60px;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	
+}
+	
+
+
+#immagine {
+	width: 800px;
+	height: 800px;
+}
+
+#immagine img {
+	object-fit: cover;
+	display: block;
+	width: 100%;
+	height: 100%;
+}

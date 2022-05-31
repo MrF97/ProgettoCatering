@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	th:replace="fragments/base.html :: headerfiles(title=#{header.prodotti})">
+<meta charset="UTF-8" />
+<title>Spring Boot Thymeleaf Application - Bootstrap Date Time
+	Picker</title>
+
+<link th:rel="stylesheet"
+	th:href="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css}" />
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+<link th:rel="stylesheet"
+	th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+</head>
+<body>
+
+	<header th:replace="fragments/base.html :: intestazione"></header>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-4 mt-5">
+				<form th:action="@{/prenotazione}" method="POST">
+
+				<div th:text="${prenotazione.username}"></div>	
+
+					<div class="form-group">
+						<label for="description">Note:</label>
+						<textarea type="text" rows="2" id="description"
+							placeholder="Note" class="form-control" 
+							th:field="${prenotazione.descrizione}" autocomplete="off"></textarea>
+					</div>
+
+					<div class="form-group" >
+						<label for="date">Date:</label>
+						<div class="input-group date" id="datetimepicker1"
+							data-target-input="nearest" >
+							<input onkeydown="return false" class="form-control datetimepicker-input"
+								data-target="#datetimepicker1" th:field="${prenotazione.date}"
+								id="date" placeholder="Date"  required/>
+							<div class="input-group-append" data-target="#datetimepicker1"
+								data-toggle="datetimepicker" >
+								<div class="input-group-text">
+									<i class="fa fa-calendar-alt" ></i>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="container">
+
+						<div class="form-group">
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="option1" name="option1"
+									class="custom-control-input" value="Carne1"
+									th:field="${prenotazione.buffet}"> <label
+									class="custom-control-label" for="option1">Buffet Carne 1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="option2" name="option2"
+									class="custom-control-input" value="Carne 2"
+									th:field="${prenotazione.buffet}"> <label
+									class="custom-control-label" for="option2">Buffet Carne 2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="option3" name="option3"
+									class="custom-control-input" value="Pesce 1"
+									th:field="${prenotazione.buffet}"> <label
+									class="custom-control-label" for="option3">Buffet Pesce 1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="option4" name="option4"
+									class="custom-control-input" value=" Pesce 2"
+									th:field="${prenotazione.buffet}"> <label
+									class="custom-control-label" for="option4">Buffet Pesce 2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="option5" name="option5"
+									class="custom-control-input" value="Vegetariano"
+									th:field="${prenotazione.buffet}"> <label
+									class="custom-control-label" for="option5">Buffet vegetariano</label>
+							</div>
+						</div>
+
+					</div>
+
+
+
+
+					<button class="btn btn-primary" type="submit">Submit form</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/moment/moment.min.js}"></script>
+	<script th:src="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.js}"></script>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+
+
+	<script>
+		$.fn.datetimepicker.Constructor.Default = $.extend({},
+				$.fn.datetimepicker.Constructor.Default, {
+					icons : {
+						time : 'far fa-clock',
+						date : 'far fa-calendar',
+						up : 'fas fa-arrow-up',
+						down : 'fas fa-arrow-down',
+						previous : 'fas fa-chevron-left',
+						next : 'fas fa-chevron-right',
+						today : 'far fa-calendar-check-o',
+						clear : 'far fa-trash',
+						close : 'far fa-times'
+					}
+				});
+
+		$('#datetimepicker1').datetimepicker({
+			format : 'DD/MM/YYYY h:mm A'
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<link th:insert="fragments/base.html :: headerfiles(title=prenotazioni)"></link> 
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+    	<div id ="titolo"><strong>LISTA DELLE PRENOTAZIONI</strong></div>
+		<ul>
+			<li th:each="prenotazione : ${prenotazioni}">
+				<a><strong> Buffet:</strong></a>
+				<a th:text="${prenotazione.buffet}">Ciao</a>
+				<a ><strong> Data: </strong></a>
+				<a th:text="${prenotazione.date}">Ciao</a>
+				<hr>
+			</li>
+		</ul>
+	</div>
+	<footer th:replace="fragments/base.html :: fondo('/default')"></footer>
+</body>
+</html>

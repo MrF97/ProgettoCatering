@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<p th:insert="fragments/base.html :: headerfiles(title='Home')"></p>
+
+<link rel="stylesheet" th:href="@{/css/admin.css}">
+
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	
+
+	<div id="flex-container">
+	
+
+		<section>
+			<h1 class="paragrafo1" id="titolo">Tutti gli Chef :</h1>
+
+			<div class="paragrafo1" id="lista">
+				
+					<dl th:each="chef : ${chefs}">
+						<span th:text="${chef.name}">Ciao</span>
+						<span th:text="${chef.cognome}">Ciao</span>
+					</dl>
+
+			</div>
+		</section>
+
+	<a th:href="@{/admin/addChef}"> Aggiungi uno Chef </a>
+
+
+	</div>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+</body>
+</html>

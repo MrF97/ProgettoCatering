@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles(title)">
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/my-style.css}" rel="stylesheet">
+	<title th:text="${title}"></title>
+</head>
+<body>
+	<header th:fragment="intestazione">
+		<p>Ciccio's Catering</p>
+	</header>
+
+	<p>Go to the next page to see fragments in action</p>
+	<aside>
+		<div>This is a sidebar</div>
+	</aside>
+	<div class="another">This is another sidebar</div>
+	
+	<footer th:fragment="fondo(home)">
+	
+	<div id="push"></div>
+	
+		<a th:href="@{/default}"><strong>Home</strong></a>
+		<div id="contatti">CONTATTI:</div>
+		<div id="contatti">tel: 06*******</div>
+		<div id="contatti">cell: 33*******</div>
+	</footer>
+</body>
+</html>

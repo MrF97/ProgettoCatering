@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head
+	th:replace="fragments/base.html :: headerfiles(title='Registra Utente')">
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div>
+
+		<h4>Aggiungi Chef</h4>
+
+		<form th:action="@{/admin/addBuffet}" method="POST">
+			<table>
+				
+				<!--<tr>
+				 	<td>Password</td>
+					<td><input type="password" placeholder="password" required
+						th:field="${buffet.password}" /></td>
+					<td th:if="${#fields.hasErrors('buffet.password')}"
+						th:errors="${buffet.password}" th:style="'color:red'"></td>
+				</tr>-->
+				<tr>
+					<td>Nome</td>
+					<td><input type="text" placeholder="nome" required
+						th:field="${buffet.name}" /></td>
+					<td th:if="${#fields.hasErrors('buffet.name')}"
+						th:errors="${buffet.name}" th:style="'color:red'"></td>
+				</tr>
+			
+				<tr>
+					<legend>Chef disponibili</legend>
+					<dl th:each="chef : ${chefs}">
+						<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" id="option1" name="option1"
+									class="custom-control-input" value=" chef"
+									th:field="${buffet.chef}" 
+									th:text="${chef.name + chef.cognome}"> <label
+									class="custom-control-label" for="option1"></label>
+						</div>
+				
+					</dl>
+				</tr>	
+				
+				
+					<div>
+					<label for="description">Descrizione:</label>
+					<textarea type="text" rows="2" id="description"
+							placeholder="Descrizione" class="form-control" 
+							th:field="${buffet.description}" autocomplete="off"></textarea>
+					
+				</div>
+
+
+
+				<tr>
+					<td>
+						<button type="submit">Registra</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+
+
+
+	</div>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
+
+</body>
+</html>

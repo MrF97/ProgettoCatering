@@ -1,0 +1,5 @@
+-Per passare lo username alal prenotazione ho usato i metodi setUsername in entrambi i controller 
+altrimenti non funzionava
+
+-Per aggiornare un entità, bisogna passare nell'action del post l'id e poi usarlo nel metodo 
+controller con @PathVariable

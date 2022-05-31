@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<p th:insert="fragments/base.html :: headerfiles(title='Home')"></p>
+
+<link rel="stylesheet" th:href="@{/css/buffet.css}">
+
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	
+	
+	<div id="incipit">Qui troverete una selezione dei nostri menu, preparata dai nostri chef. 
+					  Tutti i menu sono studiati e realizzati dai nostri chef con esclusivamente
+					  prodotti freschi e di stagione, per offrire sempre il massimo della qualita'
+	</div>
+
+	<div id="flex-container">
+	
+	
+	<div id="immagine">
+			<img src="../images/buffet.jpg" class="d-block w-100" alt="...">
+		</div>
+
+		<section>
+			<h1 class="paragrafo1" id="titolo">Tutti i nostri Chef :</h1>
+
+			<div class="paragrafo1" id="lista">
+				
+					<dl th:each="chef : ${chefs}">
+						<strong><dt th:text="${chef.name}">Ciao</dt></strong>
+				
+					</dl>
+
+				
+			</div>
+		</section>
+
+
+	</div>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+</body>
+</html>

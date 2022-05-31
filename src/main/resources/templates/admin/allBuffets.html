@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<p th:insert="fragments/base.html :: headerfiles(title='Home')"></p>
+
+<link rel="stylesheet" th:href="@{/css/admin.css}">
+
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	
+
+	<div id="flex-container">
+	
+
+		<section>
+			<h1 class="paragrafo1" id="titolo">Tutti i Buffets: </h1>
+
+			<div class="paragrafo1" id="lista">
+				
+					<dl th:each="buffet : ${buffets}">
+						<strong><a th:href="@{/admin/modificaBuffet/{id}(id = ${buffet.id})}" th:text="${buffet.name}">Ciao</a></strong>
+						
+				
+					</dl>
+
+			</div>
+		</section>
+
+	<a th:href="@{/admin/addBuffet}"> Aggiungi un Buffet</a>
+
+
+	</div>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+</body>
+</html>

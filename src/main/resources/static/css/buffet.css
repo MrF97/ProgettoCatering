@@ -1,0 +1,84 @@
+#flex-container {
+	display: flex;
+	background-color: #EED8AE;
+	justify-content: space-between;
+	width: 100%;
+	font: italic 1.2em "Fira Sans", serif;
+	
+	border: 5px solid black;
+}
+
+
+.paragrafo1{
+	text-align: center;
+	padding: 5px 330px 30px 330px;
+	font-size: 25px;
+	font: Georigia;
+}
+
+
+
+
+
+
+#titolo{
+	border-top: 5px solid black;
+	font-size: 35px;
+	justify-content: space-around;
+	
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+	font-size: 21px;
+	justify-content: space-around;
+	width: 100%;
+	
+}
+
+#lista{
+	display: flex;
+	flex-direction: column;
+	
+	justify-content: space-around;
+	
+}
+
+dd{
+		
+	padding-bottom: 20px;
+}
+	
+
+
+#immagine {
+	display: flex;
+	flex-direction: column;
+	width: 800px;
+	height: 800px;
+}
+
+#immagine img {
+	object-fit: cover;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.chef{
+	margin: -80px 1px 1px 4px;
+	background-color: grey;
+	border-radius: 10px; 
+	font-family: system-ui;
+}
+
+#nomeChef{
+	font-size: 50px;
+	
+}
+
+body{
+	text-align: center;
+}

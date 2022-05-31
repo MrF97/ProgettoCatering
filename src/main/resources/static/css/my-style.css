@@ -1,0 +1,43 @@
+header {
+    
+    display: flex;
+    align-items: center;
+    height: 170px;
+    margin: 10px;
+    justify-content: center;    
+}
+
+header > p {
+    color: black;
+    text_align: center;
+    margin: 3%;
+    font-size: 800%;
+	font-family: "Brush Script MT";
+}
+
+
+footer {
+	height: 120px;
+	background: black;
+    border-top-style: outset;
+    margin-top: 2em;
+	text-align: center;
+	color: white;s
+	width: 100%;
+	}
+	
+#contatti{
+	font-size: 17px;
+}	
+	
+span.input {width: 30%;}
+
+body{
+	display:block;
+}
+
+#push{
+	
+	;
+	clear: both;
+}

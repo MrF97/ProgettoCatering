@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link th:insert="fragments/base.html :: headerfiles(title='Home')"></link>
+
+<link rel="stylesheet" th:href="@{/css/buffet.css}">
+
+</head>
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+
+	<h1 class="paragrafo1" id="titolo" th:text=${nome}>ciao</h1>
+
+
+	<div class="paragrafo1" id="incipit" th:text=${descrizione}>ciao</div>
+
+	<div id="flex-container">
+
+		<section>
+
+			<div id="lista">
+
+				<div id="elementoLista">
+					<strong>PRIMI</strong>
+				</div>
+				<dl th:each="primo : ${primi}">
+					<strong><dt th:text="${primo.name}">Ciao</dt></strong>
+					<em><dd th:text="${primo.description}">Ciao</dd></em>
+				</dl>
+
+				<div id="elementoLista">
+					<strong>SECONDI</strong>
+				</div>
+				<dl th:each="secondo : ${secondi}">
+					<strong><dt th:text="${secondo.name}">Ciao</dt></strong>
+					<em><dd th:text="${secondo.description}">Ciao</dd></em>
+				</dl>
+
+				<div id="elementoLista">
+					<strong>DESSERT</strong>
+				</div>
+				<dl th:each="dessert : ${desserts}">
+					<strong><dt th:text="${dessert.name}">Ciao</dt></strong>
+					<em><dd th:text="${dessert.description}">Ciao</dd></em>
+				</dl>
+
+			</div>
+	</section>
+
+
+		<div id="immagine">
+			<img src="../images/chef1.png" class="d-block w-100" alt="...">
+			<div class="chef" id="nomeChef" th:text="${chef}">Ciao</div>
+			<div class="chef">Preparato dallo chef:</div>
+			
+		</div>
+	</div>
+
+
+	<a th:href="@{/prenotazione}"> PRENOTA </a>
+
+	<footer th:replace="fragments/base.html :: fondo(home='/default')"></footer>
+</body>
+</html>
