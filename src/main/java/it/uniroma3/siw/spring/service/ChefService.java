@@ -33,5 +33,11 @@ public class ChefService {
     public List<Chef> getAllChefs() {
         return (List<Chef>) this.chefRepository.findAll();
     }
+	
+	@Transactional
+	public void deleteChefById(long id){
+		this.chefRepository.deleteById(id);
+		return;
+	}
 
 }

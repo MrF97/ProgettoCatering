@@ -2,20 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
 <link th:insert="fragments/base.html :: headerfiles(title=prenotazioni)"></link> 
+<link rel="stylesheet" th:href="@{/css/admin.css}">
 </head>
 <body>
 	<header th:replace="fragments/base.html :: intestazione"></header>
 	<div>
-    	<div id ="titolo"><strong>LISTA DELLE PRENOTAZIONI</strong></div>
+	<div id="flex-container">
+	
+			<div id="spiegazione">In questa sezione puoi vedere tutte le tue prenotazioni </div>
+	
+	
+    	<div id ="titolo"><strong>LISTA DELLE PRENOTAZIONI</strong></div>		
+		
 		<ul>
 			<li th:each="prenotazione : ${prenotazioni}">
 				<a><strong> Buffet:</strong></a>
 				<a th:text="${prenotazione.buffet}">Ciao</a>
 				<a ><strong> Data: </strong></a>
 				<a th:text="${prenotazione.date}">Ciao</a>
+				<a ><strong> Descrizione: </strong></a>
+				<a th:text="${prenotazione.descrizione}">Ciao</a>
 				<hr>
 			</li>
 		</ul>
+	</div>
 	</div>
 	<footer th:replace="fragments/base.html :: fondo('/default')"></footer>
 </body>

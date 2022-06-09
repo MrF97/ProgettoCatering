@@ -1,66 +1,61 @@
 header {
-    background: no-repeat left/cover url(/images/download.jpg);
-    display: flex;
-    height: 500px;
-    text-shadow: #000 0 0 .5em;
-    margin: 40px;
-    justify-content: center;
-    
+	background: no-repeat left/cover url(/images/download.jpg);
+	display: flex;
+	height: 500px;
+	text-shadow: #000 0 0 .5em;
+	margin: 40px;
+	justify-content: center;
 }
 
-header > p {
-    color: white;
-    text_align: center;
-    margin: 3%;
-    font-size: 1400%;
+header>p {
+	color: white;
+	text_align: center;
+	margin: 3%;
+	font-size: 1400%;
 	font-family: "Brush Script MT";
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: -1;
-    background-color: #1c1b1b;
-    color: whitesmoke;
-    height: 150px;
-    margin: -200px 100px 100px 100px;  
-    border-radius: 20px;  
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	grid-column-start: 2;
+	grid-row-start: 1;
+	grid-row-end: -1;
+	background-color: #1c1b1b;
+	color: whitesmoke;
+	height: 150px;
+	margin: -200px 100px 100px 100px;
+	border-radius: 20px;
 }
 
-nav > a {
-    font-size: x-large;
-    transform: scale(1);
-    transition-duration: 0.3s;
-    color: whitesmoke;
-    text-decoration: none;
-    padding: 2px 60px;
-    margin: 100px;
+nav>a {
+	font-size: x-large;
+	transform: scale(1);
+	transition-duration: 0.3s;
+	color: whitesmoke;
+	text-decoration: none;
+	padding: 2px 60px;
+	margin: 100px;
 }
 
-nav > a:hover {
-    cursor: pointer;
-    transform: scale(2);
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-   	transition-color: white;
-    color: whitesmoke;
+nav>a:hover {
+	cursor: pointer;
+	transform: scale(2);
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+	transition-color: white;
+	color: whitesmoke;
 }
-
-
-
-
 
 footer {
-    border-top-style: outset;
-    margin-top: 2em;
+	border-top-style: outset;
+	margin-top: 2em;
 	text-align: center;
-	}
-	
-body.div{
+}
+
+body.div {
 	margin: -200px;
 }
 
@@ -73,42 +68,57 @@ body.div{
 	display: inline-block;
 	
 }*/
-
-
-.IMenu{
-	text-align:center;
-	color: #696969	;
+.IMenu {
+	text-align: center;
+	color: #696969;
 	font-size: 30px;
-	font-family:Palatino, URW Palladio L, serif	;
-	
-	
+	font-family: Palatino, URW Palladio L, serif;
 }
 
-
-.IMenu > a{
+.IMenu>a {
 	display: block;
 	transform: scale(1);
-    transition-duration: 0.3s;
+	transition-duration: 0.3s;
 	padding: 15px 500px;
-	text-decoration:none;
-	color: #696969	;	
+	text-decoration: none;
+	color: #696969;
 }
 
-
-.IMenu > a:hover {
+.IMenu>a:hover {
 	width: 100%;
 	cursor: pointer;
-    transform: scale(1.4);
-    transition-duration: 0.5s;
-    transition-timing-function: ease;
-   	transition-color: #696969	;
-   	color: #696969	;   	
+	transform: scale(1.4);
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+	transition-color: #696969;
+	color: #696969;
 }
 
-#capoTesto{
+#capoTesto {
 	font-size: 45px;
 	margin-top: 90px;
 	margin-top: 100px;
 }
 
+h5, #descrizione {
+	font-size: 50px;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
 
+#username1 {
+	color: black;
+	position: absolute;
+	top: 55px;
+	left: 80px;
+	font-size: 25px;
+	text-shadow: none;
+}
+
+#username2 {
+	color: black;
+	position: absolute;
+	top: 55px;
+	left: 165px;
+	font-size: 25px;
+	text-shadow: none;
+}

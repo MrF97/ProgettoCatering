@@ -18,13 +18,7 @@
 					<td th:if="${#fields.hasErrors('chef.origin')}"
 						th:errors="${chef.origin}" th:style="'color:red'"></td>
 				</tr>
-				<!--<tr>
-				 	<td>Password</td>
-					<td><input type="password" placeholder="password" required
-						th:field="${chef.password}" /></td>
-					<td th:if="${#fields.hasErrors('chef.password')}"
-						th:errors="${chef.password}" th:style="'color:red'"></td>
-				</tr>-->
+
 				<tr>
 					<td>Nome</td>
 					<td><input type="text" placeholder="nome" required
@@ -32,6 +26,7 @@
 					<td th:if="${#fields.hasErrors('chef.name')}"
 						th:errors="${chef.name}" th:style="'color:red'"></td>
 				</tr>
+
 				<tr>
 					<td>Cognome</td>
 					<td><input type="text" placeholder="cognome" required
@@ -39,17 +34,6 @@
 					<td th:if="${#fields.hasErrors('chef.cognome')}"
 						th:errors="${chef.cognome}" th:style="'color:red'"></td>
 				</tr>
-
-
-				<!--  <div>
-				<fieldset>
-					<legend>Buffet preparati</legend>
-					<br> <input type="checkbox" name="html" value="html" /> html
-					<br /> <input type="checkbox" name="css" value="css" /> css
-					<br /> <input type="checkbox" name="javascript" value="javascript" /> JavaScript
-				</fieldset>
-				</div>-->
-
 
 				<tr>
 					<td>

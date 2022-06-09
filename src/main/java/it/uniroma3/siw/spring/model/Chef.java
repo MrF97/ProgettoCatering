@@ -38,7 +38,7 @@ public class Chef {
 	@Column(nullable=false)
 	private String cognome;
 	
-	@OneToMany(mappedBy = "chef" , cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToMany(mappedBy = "chef" , cascade = {CascadeType.PERSIST})
 	private List<Buffet> buffets;
 	
 

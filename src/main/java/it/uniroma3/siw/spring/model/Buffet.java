@@ -34,10 +34,10 @@ public Buffet(Long id) {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;	
 	
-	@Column(nullable=false)
+	@Column
 	private String name;
 	
-	@Column(nullable=false)
+	@Column
 	private String description;
 	
 	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})

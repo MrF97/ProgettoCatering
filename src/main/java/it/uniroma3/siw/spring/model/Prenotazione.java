@@ -26,7 +26,7 @@ public class Prenotazione {
 	@Column
 	private String username;
 	
-	@Column
+	@Column(length = 2000 )
 	private String descrizione;
 	
 	@Column(nullable=false)

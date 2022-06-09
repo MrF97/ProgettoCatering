@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.uniroma3.siw.spring.model.Buffet;
 import it.uniroma3.siw.spring.model.Chef;
+import it.uniroma3.siw.spring.model.Wrapper;
 import it.uniroma3.siw.spring.service.BuffetService;
 import it.uniroma3.siw.spring.service.ChefService;
 
@@ -35,9 +36,10 @@ public class AdminController {
 
 	@RequestMapping(value="/admin/chefs", method = RequestMethod.GET)
 	public String chefs(Model model) {
-		List<Chef> chef = chefService.getAllChefs();
-		model.addAttribute("chefs", chef);
-		return "/admin/chefs";
+		List<Chef> chefs = chefService.getAllChefs();
+		model.addAttribute("chefs", chefs);
+		model.addAttribute("errore", " ");
+		return "/admin/allChefs";
 	}
 	
 	
@@ -48,12 +50,12 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping(value="/admin/addBuffet", method = RequestMethod.GET)
-	public String nuovoBuffet(Model model) {
-		model.addAttribute("buffet", new Buffet());
-		model.addAttribute("chefs", chefService.getAllChefs());
-		return "/admin/aggiungiBuffet";
-	}
+//	@RequestMapping(value="/admin/addBuffet", method = RequestMethod.GET)
+//	public String nuovoBuffet(Model model) {
+//		model.addAttribute("buffet", new Buffet());
+//		model.addAttribute("chefs", chefService.getAllChefs());
+//		return "/admin/aggiungiBuffet";
+//	}
 	
 	
 	@RequestMapping(value="/admin/buffets", method = RequestMethod.GET)
@@ -67,9 +69,10 @@ public class AdminController {
 	public String refactorBuffet(Model model, @PathVariable long id) {
 		model.addAttribute("buffet", buffetService.getBuffet((long)id));
 		model.addAttribute("chefs", chefService.getAllChefs());
-		model.addAttribute("cuoco_id", 0);
+		model.addAttribute("wrap", new Wrapper());
 		return "/admin/editBuffet";
 	}
+	
 	
 	
 	@RequestMapping(value="/admin/addChef", method = RequestMethod.POST)
@@ -78,17 +81,37 @@ public class AdminController {
 			Model model) {
 		if(!bindingResult.hasErrors()) {
 			chefService.saveChef(chef);
-			return "/admin/chefs";
+			List<Chef> chefs = chefService.getAllChefs();
+			model.addAttribute("chefs", chefs);
+			model.addAttribute("errore", " ");
+			return "/admin/allChefs";
 		}
 		return "admin/aggiungiChef";
 	}
 	
 	
-	@RequestMapping(value="/admin/addBuffet", method = RequestMethod.POST)
-	public String inserisciBuffet(@ModelAttribute ("buffet") Buffet buffet,
-			BindingResult bindingResult,
-			Model model) {
-		if(!bindingResult.hasErrors()) {
+//	@RequestMapping(value="/admin/addBuffet", method = RequestMethod.POST)
+//	public String inserisciBuffet(@ModelAttribute ("buffet") Buffet buffet,
+//			BindingResult bindingResult,
+//			Model model) {
+//		if(!bindingResult.hasErrors()) {
+//			buffetService.saveBuffet(buffet);
+//			return "/admin/allBuffets";
+//		}
+//		return "admin/aggiungiBuffet";
+//	}
+	
+	
+	@RequestMapping(value="/admin/modificaBuffet/{buffet_id}", method = RequestMethod.POST)
+	public String modificaBuffet(@ModelAttribute ("buffet") Buffet buffet,
+			BindingResult buffetBindingResult,
+			@ModelAttribute ("wrap") Wrapper wrap,
+//			@ModelAttribute ("id") long id, 
+//			BindingResult idBindingResult,
+			Model model, @PathVariable long buffet_id) {
+		if(!buffetBindingResult.hasErrors() ) {
+			buffet.setId(buffet_id);
+			buffet.setChef(chefService.getChef(wrap.getId()));
 			buffetService.saveBuffet(buffet);
 			return "/admin/allBuffets";
 		}
@@ -96,20 +119,20 @@ public class AdminController {
 	}
 	
 	
-	@RequestMapping(value="/admin/modificaBuffet/{id}", method = RequestMethod.POST)
-	public String modificaBuffet(@ModelAttribute ("buffet") Buffet buffet,
-			BindingResult buffetBindingResult,
-			@ModelAttribute ("cuoco_id") int chef_id,
-//			@ModelAttribute ("id") long id, 
-//			BindingResult idBindingResult,
-			Model model, @PathVariable long buffet_id) {
-		if(!buffetBindingResult.hasErrors() ) {
-			buffet.setId(buffet_id);
-			buffet.setChef(chefService.getChef((long)chef_id));
-			buffetService.saveBuffet(buffet);
-			return "/admin/allBuffets";
+	@RequestMapping(value="/admin/deleteChef/{id}")
+	public String eliminaChef(Model model, @PathVariable long id) {
+		try{
+		chefService.deleteChefById(id);
+		List<Chef> chefs = chefService.getAllChefs();
+		model.addAttribute("chefs", chefs);
+		model.addAttribute("errore", " ");
+		return "/admin/allChefs";
+		} catch(Exception e) {
+			List<Chef> chefs = chefService.getAllChefs();
+			model.addAttribute("chefs", chefs);
+			model.addAttribute("errore", "NON PUOI ELIMINARE UNO CHEF SE ANCORA COLLEGATO AD UN BUFFET");
+			return "/admin/allChefs";
 		}
-		return "admin/aggiungiBuffet";
 	}
 
 }

@@ -2,6 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head
 	th:replace="fragments/base.html :: headerfiles(title='Registra Utente')">
+
+<link rel="stylesheet" th:href="@{/css/admin.css}">
 </head>
 <body>
 	<header th:replace="fragments/base.html :: intestazione"></header>
@@ -9,44 +11,48 @@
 
 		<h4>Modifica Buffet</h4>
 
-		<form th:action="@{/admin/modificaBuffet/{id}(id = ${buffet.id})}" method="POST">
-			<table>
-					
-				<tr>
-					<div>Chef disponibili</div>
-					<dl th:each="chef : ${chefs}">
-						<div class="custom-control custom-radio custom-control-inline">
-								<input type="radio" id="${chef.id}" name="${chef.id}"
-									class="custom-control-input" value="${chef.id}"
-									th:field="${cuoco_id}"
-									th:text="${chef.name + chef.cognome}"> <label
-									class="custom-control-label" for="option1"></label>
-						</div>
-				
-					</dl>
-				</tr>
+		<form th:action="@{/admin/modificaBuffet/{id}(id = ${buffet.id})}"
+			method="POST">
 
 
-				<tr>
-					<td>
-						<button type="submit">Registra</button>
-					</td>
-				</tr>
-			</table>
-			
-				
-			
+			<div>Chef disponibili</div>
+			<dl th:each="chef : ${chefs}">
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="${chef.id}" name="${chef.id}"
+						class="custom-control-input" value="${chef.id}"
+						th:value="*{wrap.id}" th:text="${chef.name +' '+ chef.cognome}">
+					<label class="custom-control-label" for="option1"></label>
+				</div>
+
+			</dl>
+
+			<dl>
+				<dd>Nome</dd>
+				<dd>
+					<input type="text" placeholder="nome" required
+						th:field="${buffet.name}" />
+					</dd>
+					<dd th:if="${#fields.hasErrors('buffet.name')}"
+					th:errors="${buffet.name}" th:style="'color:red'">
+			</dl>
+
+
+
+			<button type="submit">Registra</button>
+
+
 		</form>
 
 
 
 	</div>
-	
+
 	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
 	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	<script th:src="@{/assets/moment/moment.min.js}"></script>
-	<script th:src="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.js}"></script>
+	<script
+		th:src="@{/assets/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.js}"></script>
 
 	<footer th:replace="fragments/base.html :: fondo(home='/')"></footer>
 

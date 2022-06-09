@@ -58,7 +58,10 @@ public class AuthenticationController {
     	if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
             return "home";
         }
-        return "logIndex";
+    	else{
+    		model.addAttribute("username", credentials.getUsername());
+    		return "logIndex";
+    	}
     }
     
 //    @RequestMapping(value = "/home", method = RequestMethod.GET)//ci va admin/home

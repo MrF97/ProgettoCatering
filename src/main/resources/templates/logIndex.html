@@ -23,7 +23,11 @@
 <body>
 <div style="width:100%">
 
+	
+
 	<header th:fragment="intestazione">
+		<span id="username1">Utente:</span>
+		<span id="username2" th:text="${username}">ciao</span>
 		<p>Ciccio's Catering</p>
 	</header>
 
@@ -49,30 +53,29 @@
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img
-					src="https://www.zankyou.it/images/mag-card-c/cd0/028a/878/623/-/it/wp-content/uploads/2019/09/masseria-torrepietra-1.jpeg"
+					src="/images/location.jpg"
 					class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>First slide label</h5>
-					<p>Some representative placeholder content for the first slide.</p>
+					<h5>RENDI SPECIALE IL TUO EVENTO</h5>
+					<p id="descrizione">Siamo disponibili per qualsiasi evento: Matrimoni, Compleanni, Comunioni o ovunque sia richiesto un rinfresco</p>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img
-					src="https://www.ecoidee.it/wp-content/uploads/2018/02/job_stage.jpg"
+					src="/images/buffet.jpg"
 					class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>Second slide label</h5>
-					<p>Some representative placeholder content for the second
-						slide.</p>
+					<h5>BUFFET PREPARATI SU MISURA</h5>
+					<p id="descrizione">Scegli tra la gamma dei nostri buffet quello che preferisci </p>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img
-					src="https://www.boccadibacco.net/wp-content/uploads/2015/08/DSC6527-2.jpeg"
+					src="/images/piatti.jpg"
 					class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>Third slide label</h5>
-					<p>Some representative placeholder content for the third slide.</p>
+					<h5>SOLO CIBO DI QUALITA'</h5>
+					<p id="descrizione">Il nostri piatti sono composti solo da materie prime di qualita' altissima e a km0</p>
 				</div>
 			</div>
 		</div>

@@ -14,21 +14,27 @@
 
 	<div id="flex-container">
 	
+<div id="spiegazione">In questa sezione puoi visualizzare tutti gli chef, e decidere di aggiungerne uno nuovo o eliminarne uno gia' presente</div>
+
 
 		<section>
 			<h1 class="paragrafo1" id="titolo">Tutti gli Chef :</h1>
 
 			<div class="paragrafo1" id="lista">
-				
+			<div id="errore" th:text="${errore}">ciao</div>	
 					<dl th:each="chef : ${chefs}">
+						<form th:action="@{/admin/deleteChef/{id}(id = ${chef.id})}">
 						<span th:text="${chef.name}">Ciao</span>
 						<span th:text="${chef.cognome}">Ciao</span>
+						
+						<button type="submit" >Elimina</button>
+						</form>
 					</dl>
 
 			</div>
 		</section>
 
-	<a th:href="@{/admin/addChef}"> Aggiungi uno Chef </a>
+	<a id="add" th:href="@{/admin/addChef}"> Aggiungi uno Chef </a>
 
 
 	</div>

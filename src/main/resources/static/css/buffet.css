@@ -4,7 +4,6 @@
 	justify-content: space-between;
 	width: 100%;
 	font: italic 1.2em "Fira Sans", serif;
-	
 	border: 5px solid black;
 }
 
@@ -17,16 +16,13 @@
 }
 
 
-
-
-
-
 #titolo{
 	border-top: 5px solid black;
 	font-size: 35px;
 	justify-content: space-around;
 	
 }
+
 
 section{
 	display: flex;
@@ -38,6 +34,7 @@ section{
 	
 }
 
+
 #lista{
 	display: flex;
 	flex-direction: column;
@@ -46,12 +43,12 @@ section{
 	
 }
 
+
 dd{
 		
 	padding-bottom: 20px;
 }
 	
-
 
 #immagine {
 	display: flex;
@@ -60,12 +57,14 @@ dd{
 	height: 800px;
 }
 
+
 #immagine img {
 	object-fit: cover;
 	display: block;
 	width: 100%;
 	height: 100%;
 }
+
 
 .chef{
 	margin: -80px 1px 1px 4px;
@@ -74,10 +73,11 @@ dd{
 	font-family: system-ui;
 }
 
+
 #nomeChef{
 	font-size: 50px;
-	
 }
+
 
 body{
 	text-align: center;
