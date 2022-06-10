@@ -68,12 +68,12 @@ public class Start implements ApplicationListener<ContextRefreshedEvent> {
     
     	
     	List<Ingridient> listaIngredienti1=new ArrayList<Ingridient>();
-    	listaIngredienti1.add(new Ingridient("pane", "guatemala", "cagotto assicurato"));
+    	listaIngredienti1.add(new Ingridient("pane", "guatemala", "aaa"));
     	listaIngredienti1.add(new Ingridient("nutella", "italia", "fatta con nocciole"));
     	Plate piatto1=new Plate("pane e nutella", "pane di farina 000, e nutella dell'euro spin" ,listaIngredienti1);
     	
     	List<Ingridient> listaIngredienti2=new ArrayList<Ingridient>();
-    	listaIngredienti2.add(new Ingridient("pane", "guatemala", "cagotto assicurato"));
+    	listaIngredienti2.add(new Ingridient("pane", "guatemala", "aaa"));
     	listaIngredienti2.add(new Ingridient("pomodori", "italia", "fatta con nocciole"));
     	Plate piatto2 = new Plate("bruschetta con i pomodori", "pane di farina 000, e pomodori dell'euro spin" ,listaIngredienti2);
     	
@@ -82,12 +82,12 @@ public class Start implements ApplicationListener<ContextRefreshedEvent> {
     	primi1.add(piatto2);
     	
     	List<Ingridient> listaIngredienti3=new ArrayList<Ingridient>();
-    	listaIngredienti3.add(new Ingridient("manzo", "guatemala", "cagotto assicurato"));
+    	listaIngredienti3.add(new Ingridient("manzo", "guatemala", "aaa"));
     	listaIngredienti3.add(new Ingridient("pomodoro", "italia", "fatta con nocciole"));
     	Plate piatto3=new Plate("spezzatino al sugo", "pane di farina 000, e nutella dell'euro spin" ,listaIngredienti1);
     	
     	List<Ingridient> listaIngredienti4=new ArrayList<Ingridient>();
-    	listaIngredienti4.add(new Ingridient("pollo", "guatemala", "cagotto assicurato"));
+    	listaIngredienti4.add(new Ingridient("pollo", "guatemala", "aaa"));
     	listaIngredienti4.add(new Ingridient("farina", "italia", "fatta con nocciole"));
     	Plate piatto4 = new Plate("pollo fritto", "pane di farina 000, e pomodori dell'euro spin" ,listaIngredienti2);
     	
@@ -97,12 +97,12 @@ public class Start implements ApplicationListener<ContextRefreshedEvent> {
     	
   
     	List<Ingridient> listaIngredienti5=new ArrayList<Ingridient>();
-    	listaIngredienti5.add(new Ingridient("manzo", "guatemala", "cagotto assicurato"));
+    	listaIngredienti5.add(new Ingridient("manzo", "guatemala", "aaa"));
     	listaIngredienti5.add(new Ingridient("pomodoro", "italia", "fatta con nocciole"));
     	Plate piatto5=new Plate("spezzatino al sugo", "pane di farina 000, e nutella dell'euro spin" ,listaIngredienti1);
     	
     	List<Ingridient> listaIngredienti6=new ArrayList<Ingridient>();
-    	listaIngredienti6.add(new Ingridient("pollo", "guatemala", "cagotto assicurato"));
+    	listaIngredienti6.add(new Ingridient("pollo", "guatemala", "aaa"));
     	listaIngredienti6.add(new Ingridient("farina", "italia", "fatta con nocciole"));
     	Plate piatto6 = new Plate("pollo fritto", "pane di farina 000, e pomodori dell'euro spin" ,listaIngredienti2);
     	
@@ -111,7 +111,7 @@ public class Start implements ApplicationListener<ContextRefreshedEvent> {
     	dessert.add(piatto6);
     	
     	
-    	Chef chefMR= new Chef("Mario", "Rossi", "San Basilio");
+    	Chef chefMR= new Chef("Mario", "Rossi", "Italia");
     	
     	
     	Buffet buffet1 = new Buffet("Buffet Carne 1", "molto buono", chefMR);
