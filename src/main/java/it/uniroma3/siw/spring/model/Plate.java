@@ -35,7 +35,7 @@ public class Plate {
 	@Column(nullable=false)
 	private String description;
 	
-	@ManyToMany(mappedBy = "plates" , cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@ManyToMany(mappedBy = "plates" , cascade = {CascadeType.MERGE })
 	private List<Ingridient> ingridients;
 	
 	

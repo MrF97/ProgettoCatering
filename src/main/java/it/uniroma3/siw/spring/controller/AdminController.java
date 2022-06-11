@@ -28,10 +28,10 @@ public class AdminController {
 	protected BuffetService buffetService;	
 	
 
-	//	@RequestMapping(value = "/admin/home", method = RequestMethod.GET)
-	//	public String home(Model model) {
-	//		return "admin/home";
-	//	}
+		@RequestMapping(value = "/admin/home", method = RequestMethod.GET)
+		public String home(Model model) {
+			return "admin/home";
+		}
 
 
 	@RequestMapping(value="/admin/chefs", method = RequestMethod.GET)
