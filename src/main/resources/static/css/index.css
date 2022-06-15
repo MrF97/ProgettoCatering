@@ -1,3 +1,6 @@
+body {
+	font-size: 100px;
+}
 header {
 	background: no-repeat left/cover url(/images/download.jpg);
 	display: flex;
@@ -11,7 +14,7 @@ header>p {
 	color: white;
 	text_align: center;
 	margin: 3%;
-	font-size: 1400%;
+	font-size: 1600%;
 	font-family: "Brush Script MT";
 }
 
@@ -71,7 +74,7 @@ body.div {
 .IMenu {
 	text-align: center;
 	color: #696969;
-	font-size: 30px;
+	font-size: 250%;
 	font-family: Palatino, URW Palladio L, serif;
 }
 

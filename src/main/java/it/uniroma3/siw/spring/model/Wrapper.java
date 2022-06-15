@@ -15,7 +15,5 @@ public class Wrapper {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	
-	
+
 }

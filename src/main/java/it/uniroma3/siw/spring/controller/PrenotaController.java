@@ -30,7 +30,7 @@ public class PrenotaController{
 	
 	
 	@RequestMapping(value= { "/prenotazione" }, method = RequestMethod.GET)
-	public String richiestaPrenotazione(Model model, Principal prin) {
+	public String richiestaPrenotazione(Model model) {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     	Credentials credentials = credentialsService.getCredentials(userDetails.getUsername());
     	Prenotazione prenotazione = new Prenotazione();
@@ -49,6 +49,7 @@ public class PrenotaController{
     	prenotazione.setUsername(credentials.getUsername());
 		if(!bindingResult.hasErrors()) { 
 			prenotazioneService.savePrenotazione(prenotazione);
+			model.addAttribute("username", credentials.getUsername());
 			return "logIndex";
 		}
 		return "homePrenotazione";
